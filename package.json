@@ -1,0 +1,32 @@
+{
+  "name": "etl",
+  "version": "1.0.0",
+  "description": "Pull data from API into database periodically",
+  "main": "app",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaohonorato/api2db.git"
+  },
+  "keywords": [
+    "etl",
+    "api",
+    "db",
+    "data",
+    "pulling"
+  ],
+  "author": "João Assis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joaohonorato/api2db/issues"
+  },
+  "homepage": "https://github.com/joaohonorato/api2db#readme",
+  "dependencies": {
+    "cron": "^1.6.0",
+    "pg": "^7.8.2",
+    "sequelize": "^4.43.0",
+    "sequelize-cli": "^5.4.0"
+  }
+}
