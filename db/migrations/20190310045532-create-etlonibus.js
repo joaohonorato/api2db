@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('onibuses', {
+    return queryInterface.createTable('etlonibuses', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,22 +11,13 @@ module.exports = {
       datahora: {
         type: Sequelize.DATE
       },
-      ordem: {
+      responsavel: {
         type: Sequelize.STRING
       },
-      linha: {
-        type: Sequelize.STRING
+      finalizada: {
+        type: Sequelize.BOOLEAN
       },
-      latitude: {
-        type: Sequelize.DOUBLE
-      },
-      longitude: {
-        type: Sequelize.DOUBLE
-      },
-      velocidade: {
-        type: Sequelize.DOUBLE
-      },
-      etlonibusId: {
+      erro: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -40,6 +31,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('onibuses');
+    return queryInterface.dropTable('etlonibuses');
   }
 };
