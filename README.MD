@@ -11,10 +11,8 @@ Instruções de como rodar a aplicação em ambiente de desenvolvimento.
 É necessário ter o seguinte programa instalado:
 
 Node.js
+postgresql
 
-```
-npm start.
-```
 ### Installing
 
 Para rodar a aplicação é necessário primeiro instalar suas dependências:
