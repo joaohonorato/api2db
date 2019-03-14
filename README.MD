@@ -15,25 +15,34 @@ Node.js
 ```
 npm start.
 ```
-
-Docker - docker - Não suportado ainda
-
-```
-[Instruções]()
-```
-
 ### Installing
 
-Para rodar a aplicação em um container, entre no diretório que contem o Dockerfile :
+Para rodar a aplicação é necessário primeiro instalar suas dependências:
+* Entre no diretório onde se encontra o package.json
+* Execute :
+```
+npm install
+```
 
 ## Deployment
 
 Informações sobre a aplicação:
 
+* Ajustar o arquivo database.json com informações do banco
+* Executar comandos:
+Criar tabelas do banco:
+```
+sequelize db:migrate
+```
+Rodar elt:
+```
+npm start
+```
+
 ## Built With
 
 - [Node.Js](https://nodejs.org/) - Linguagem de programação
-- [Sequelize](http://docs.sequelizejs.com/) - ORM para Node.js 
+- [Sequelize-cli] [Sequelize](http://docs.sequelizejs.com/) - ORM para Node.js 
 - [Cron](https://www.npmjs.com/package/cron) - Scheduler para Node.js
 
 
