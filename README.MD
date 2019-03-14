@@ -42,7 +42,7 @@ npm start
 ## Built With
 
 - [Node.Js](https://nodejs.org/) - Linguagem de programação
-- [Sequelize-cli] [Sequelize](http://docs.sequelizejs.com/) - ORM para Node.js 
+- [Sequelize-cli Sequelize](http://docs.sequelizejs.com/) - ORM para Node.js 
 - [Cron](https://www.npmjs.com/package/cron) - Scheduler para Node.js
 
 
