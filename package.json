@@ -5,7 +5,7 @@
   "main": "app",
   "scripts": {
     "start": "node app.js",
-    "create": "sequelize db:migrate"
+    "iniciar": "sequelize db:migrate"
   },
   "repository": {
     "type": "git",

@@ -1,4 +1,4 @@
-const {etlonibuses} = require('../db/models');
+const {etlonibuses,onibuses} = require('../db/models');
 const axios = require('axios')
 const {CronJob} = require('cron');
 const apiUrl = 'http://dadosabertos.rio.rj.gov.br/apiTransporte/apresentacao/rest/index.cfm/obterTodasPosicoes';
@@ -12,11 +12,13 @@ module.exports.configure = function configure(config){
 
 
 run = () => {
-    /* CronJob no segundo 0, uma vez por minuto*/
+    /* CronJob no segundo 0, uma vez por minuto
+    */
     const job = new CronJob ('0 * * * * *',() => {
-         iniciar() 
+        iniciar() 
     })
-    job.start();
+    job.start(); 
+  
 }
 
 function iniciar(){    
@@ -29,10 +31,12 @@ function iniciar(){
     })
     /* Definir se é carga inicial ou atualizacao do banco baseado na ultima etl feita com sucesso */
     .then(etlsucesso => {
-        if(etlsucesso && etlsucesso[0].dataValues){
+        if(etlsucesso.length){
+            console.log("Nova carga inicial " + new Date())
             let ultimaVez = etlsucesso[0].dataValues.datahora;
             buscarOnibus(ultimaVez);
         }else{
+            console.log("Atualizando carga " + new Date())
             buscarOnibus()
         }
     });
@@ -41,7 +45,7 @@ function iniciar(){
 /* Busca e filtra os Onibus da Api Transportes Rio */
 function buscarOnibus(time) {
     axios.get(apiUrl)
-    .then(transportes => transportes.data)
+    .then(transportes => transportes.data) 
     /* Transforma array em objetos */
     .then(dados => dados.DATA.filter(regraTransporteValido).map(data => {
            return { 
