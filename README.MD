@@ -11,6 +11,7 @@ Instruções de como rodar a aplicação em ambiente de desenvolvimento.
 É necessário ter o seguinte programa instalado:
 
 Node.js
+
 postgresql
 
 ### Installing
@@ -28,6 +29,7 @@ Informações sobre a aplicação:
 
 * Ajustar o arquivo database.json com informações do banco
 * Executar comandos:
+
 Criar tabelas do banco:
 ```
 sequelize db:migrate
