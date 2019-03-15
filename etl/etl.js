@@ -31,13 +31,13 @@ function iniciar(){
     })
     /* Definir se é carga inicial ou atualizacao do banco baseado na ultima etl feita com sucesso */
     .then(etlsucesso => {
-        if(etlsucesso.length){
+        if(etlsucesso.length === 0){
             console.log("Nova carga inicial " + new Date())
-            let ultimaVez = etlsucesso[0].dataValues.datahora;
-            buscarOnibus(ultimaVez);
+            buscarOnibus();
         }else{
             console.log("Atualizando carga " + new Date())
-            buscarOnibus()
+            let ultimaVez = etlsucesso[0].dataValues.datahora;
+            buscarOnibus(ultimaVez);
         }
     });
 }
