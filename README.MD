@@ -12,9 +12,8 @@ Instruções de como rodar a aplicação em ambiente de desenvolvimento.
 
 Node.js
 
-```
-npm start.
-```
+postgresql
+
 ### Installing
 
 Para rodar a aplicação é necessário primeiro instalar suas dependências:
@@ -30,6 +29,7 @@ Informações sobre a aplicação:
 
 * Ajustar o arquivo database.json com informações do banco
 * Executar comandos:
+
 Criar tabelas do banco:
 ```
 sequelize db:migrate
@@ -42,7 +42,7 @@ npm start
 ## Built With
 
 - [Node.Js](https://nodejs.org/) - Linguagem de programação
-- [Sequelize-cli] [Sequelize](http://docs.sequelizejs.com/) - ORM para Node.js 
+- [Sequelize-cli Sequelize](http://docs.sequelizejs.com/) - ORM para Node.js 
 - [Cron](https://www.npmjs.com/package/cron) - Scheduler para Node.js
 
 
