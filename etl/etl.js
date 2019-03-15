@@ -59,7 +59,7 @@ function buscarOnibus(time) {
     }))
     /* Filtra os onibus baseado na ultima etl feita com sucesso */
     .then((listaOnibusValidos) => {
-        return (time  !== (undefined || null) && listaOnibusValidos !== undefined) ? listaOnibusValidos.filter(bus => bus.datahora > time) : listaOnibusValidos
+        return (time) ? listaOnibusValidos.filter(bus => bus.datahora > time) : listaOnibusValidos
     })
     /* Inseri no banco de dados informacoes da etl e os onibus */
     .then((listaOnibusFiltrados) => {
